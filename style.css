@@ -41,10 +41,14 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #555;
+    padding: 5px;
 }
 
 nav ul li a:hover {
-    color: #777;
+    color: #333;
+    background-color: #ddd;
+    padding: 5px;
+    border-radius: 6px;
 }
 
 /* hero styles */
@@ -219,6 +223,19 @@ nav ul li a:hover {
 
 /* mobile screens */
 @media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image {
+        order: -1;
+        margin-bottom: 20px;
+    }
+
+    .breeds-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
     .pricing-table {
         flex-direction: column;
         align-items: center;
@@ -233,22 +250,6 @@ nav ul li a:hover {
     .pricing-card.featured {
         transform: none;
         order: -1;
-    }
-}
-
-/* mobile screens */
-@media (max-width: 768px) {
-    .about-content {
-        flex-direction: column;
-    }
-
-    .about-image {
-        order: -1;
-        margin-bottom: 20px;
-    }
-
-    .breeds-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }
 
