@@ -53,19 +53,24 @@ nav ul li a:hover {
 
 /* hero styles */
 #hero {
-    background-color: #e0e0e0;
     padding: 60px 0;
     text-align: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("https://naked-science.ru/wp-content/uploads/2016/09/field_image_flock_of_pigeons_wallpaper_-_1152x864.jpg");
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: cover;
 }
 
 #hero h2 {
     font-size: 32px;
     margin-bottom: 15px;
+    color: #fff;
 }
 
 #hero p {
     font-size: 18px;
     margin-bottom: 25px;
+    color: #fff;
 }
 
 .cta-button {
@@ -79,6 +84,15 @@ nav ul li a:hover {
 
 .cta-button:hover {
     background-color: #363636;
+}
+
+#hero .cta-button {
+    background-color: #f4f4f4;
+    color: #191919;
+}
+
+#hero .cta-button:hover {
+    background-color: #c2c2c2;
 }
 
 /* about section */
