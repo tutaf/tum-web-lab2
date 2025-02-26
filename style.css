@@ -41,10 +41,14 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #555;
+    padding: 5px;
 }
 
 nav ul li a:hover {
-    color: #777;
+    color: #333;
+    background-color: #ddd;
+    padding: 5px;
+    border-radius: 6px;
 }
 
 /* hero styles */
@@ -70,10 +74,261 @@ nav ul li a:hover {
     color: white;
     padding: 10px 25px;
     text-decoration: none;
+    border-radius: 5px;
 }
 
 .cta-button:hover {
     background-color: #363636;
+}
+
+/* about section */
+#about {
+    padding: 60px 0;
+    background-color: #f8f8f8;
+}
+
+#about h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+    color: #444;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* breeds section */
+#breeds {
+    padding: 60px 0;
+    background-color: #e8e8e8;
+}
+
+#breeds h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+    color: #444;
+}
+
+.breeds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.breed-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.breed-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.breed-card h3 {
+    padding: 15px 15px 5px;
+    font-size: 20px;
+    color: #444;
+}
+
+.breed-card p {
+    padding: 0 15px 15px;
+    color: #666;
+}
+
+/* pricing section */
+#pricing {
+    padding: 60px 0;
+    background-color: #f4f4f4;
+}
+
+#pricing h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+    color: #444;
+}
+
+.pricing-table {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.pricing-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.price {
+    font-size: 36px;
+    margin-bottom: 25px;
+    color: #444;
+}
+
+.pricing-card ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.pricing-card ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.pricing-card .cta-button {
+    display: inline-block;
+    width: 80%;
+}
+
+.pricing-card.featured {
+    transform: scale(1.05);
+    border: 2px solid #444;
+}
+
+/* contact section */
+#contact {
+    padding: 60px 0;
+    background-color: #e0e0e0;
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+    color: #444;
+}
+
+.contact-container {
+    display: flex;
+    gap: 40px;
+    max-width: 100%;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+    max-width: 100%;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image {
+        order: -1;
+        margin-bottom: 20px;
+    }
+
+    .breeds-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .pricing-table {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-card {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+
+    .pricing-card.featured {
+        transform: none;
+        order: -1;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        max-width: none;
+    }
+
+    #pigeonForm {
+        max-width: 100%;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
 }
 
 footer {
