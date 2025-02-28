@@ -13,4 +13,6 @@ This is a landing page for selling pigeons. It contains several section: about u
 
 ## Live Demo
 
-[on Github pages](https://tutaf.github.io/tum-web-lab2/)
+[Available on Github pages](https://tutaf.github.io/tum-web-lab2/)
+
+<small>(or enjoy a [crazier version of this landing page](https://tutaf.github.io/tum-web-lab2/dEsIgN/) designed by Claude 3.7)</small>
