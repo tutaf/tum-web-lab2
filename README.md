@@ -3,7 +3,6 @@
 ## Description
 This is a landing page for selling pigeons. It contains several section: about us, breeds, pricing options and a 'contact us' form. Each of these sections can be quickly reached by clicking a link in the top nav bar.
 
-The 
 ## Screenshots
 
 ![screenshot1](images/screenshot1.png)
