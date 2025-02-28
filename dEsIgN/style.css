@@ -1,0 +1,1019 @@
+/* general styles */
+@keyframes rainbow {
+    0% { color: red; }
+    14% { color: orange; }
+    28% { color: yellow; }
+    42% { color: green; }
+    57% { color: blue; }
+    71% { color: indigo; }
+    85% { color: violet; }
+    100% { color: red; }
+}
+
+@keyframes backgroundRainbow {
+    0% { background-color: rgba(255, 0, 0, 0.7); }
+    14% { background-color: rgba(255, 165, 0, 0.7); }
+    28% { background-color: rgba(255, 255, 0, 0.7); }
+    42% { background-color: rgba(0, 128, 0, 0.7); }
+    57% { background-color: rgba(0, 0, 255, 0.7); }
+    71% { background-color: rgba(75, 0, 130, 0.7); }
+    85% { background-color: rgba(238, 130, 238, 0.7); }
+    100% { background-color: rgba(255, 0, 0, 0.7); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes wobble {
+    0%, 100% { transform: translateX(0); }
+    15% { transform: translateX(-8px) rotate(-5deg); }
+    30% { transform: translateX(6px) rotate(3deg); }
+    45% { transform: translateX(-6px) rotate(-3deg); }
+    60% { transform: translateX(4px) rotate(2deg); }
+    75% { transform: translateX(-3px) rotate(-1deg); }
+    90% { transform: translateX(2px) rotate(1deg); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes flyAcross {
+    0% { transform: translateX(-100px) translateY(0); }
+    10% { transform: translateX(10vw) translateY(-50px); }
+    25% { transform: translateX(30vw) translateY(30px); }
+    40% { transform: translateX(50vw) translateY(-20px); }
+    60% { transform: translateX(70vw) translateY(40px); }
+    75% { transform: translateX(85vw) translateY(-30px); }
+    100% { transform: translateX(110vw) translateY(0); }
+}
+
+@keyframes fall {
+    0% { transform: translateY(-50px) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+@keyframes glowing {
+    0% { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6; }
+    50% { text-shadow: 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #0073e6, 0 0 25px #0073e6; }
+    100% { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6; }
+}
+
+@keyframes borderGlow {
+    0% { box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff0080, 0 0 20px #ff0080; }
+    50% { box-shadow: 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff0080, 0 0 25px #ff0080; }
+    100% { box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff0080, 0 0 20px #ff0080; }
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes flip {
+    0% { transform: rotateX(0); }
+    50% { transform: rotateX(180deg); }
+    100% { transform: rotateX(360deg); }
+}
+
+@keyframes pop-in {
+    0% { opacity: 0; transform: scale(0.5); }
+    80% { transform: scale(1.1); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes spotlight-rotate {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes confetti-fall {
+    0% { transform: translateY(-100vh) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(720deg); }
+}
+
+@keyframes background-pulse {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body {
+    font-family: 'Comic Neue', cursive;
+    color: #333;
+    line-height: 1.5;
+    overflow-x: hidden;
+    background: url('https://www.transparenttextures.com/patterns/cartographer.png');
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+.cursor-follower {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\"><path fill=\"%23444\" d=\"M400 224c-9.148 0-17.62 2.697-24.89 7.143C370.9 208.8 351.5 192 328 192c-17.38 0-32.46 9.33-40.89 23.17C282.1 192.9 263.4 176 240 176c-12.73 0-24.06 5.688-32 14.52V160c0-35.35-28.65-64-64-64s-64 28.65-64 64v208c0 18.6 3.22 36.75 9.336 53.72l16.16 44.95c6.412 17.81 23.65 29.34 42.39 29.34h146.1c19.38 0 36.14-13.5 40.28-32.27l40.83-184.4C381.7 264.2 400 249.3 400 228V224C400 224 400 224 400 224zM312 224c13.23 0 24 10.77 24 24S325.2 272 312 272S288 261.2 288 248S298.8 224 312 224zM224 224c13.23 0 24 10.77 24 24S237.2 272 224 272S200 261.2 200 248S210.8 224 224 224zM144 160c0-17.64 14.36-32 32-32s32 14.36 32 32v100.9c0 4.891 2.176 9.547 5.938 12.67c3.762 3.125 8.758 4.312 13.49 3.219C231.9 275.8 240 283.9 240 293.3V320c0 17.67-14.33 32-32 32h-64c-17.67 0-32-14.33-32-32V160z\"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+}
+
+.section-title {
+    font-family: 'Permanent Marker', cursive;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.rotating-title {
+    animation: rotate 20s linear infinite;
+    display: inline-block;
+}
+
+.bouncing-title {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.wiggle-title {
+    animation: wobble 3s ease-in-out infinite;
+}
+
+.highlight-text {
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.color-changing-text {
+    animation: rainbow 5s linear infinite;
+    font-weight: bold;
+    font-size: 24px !important;
+}
+
+.glowing-text {
+    animation: glowing 2s ease-in-out infinite;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073;
+    font-size: 48px !important;
+}
+
+.sparkling-text {
+    background-image: linear-gradient(to right, #FFC300, #FF5733, #C70039, #900C3F, #581845);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.pop-in {
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+.pop-in-visible {
+    animation: pop-in 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    animation: typing 3.5s steps(40, end) infinite;
+    border-right: 3px solid #ff5e62;
+}
+
+.flipping-text {
+    display: inline-block;
+    animation: flip 4s ease-in-out infinite;
+}
+
+.squiggle-text {
+    text-decoration: yellow wavy underline;
+    font-style: italic;
+    color: #ff5e62;
+}
+
+.small-text {
+    font-size: 10px;
+    opacity: 0.7;
+}
+
+.confetti {
+    position: fixed;
+    font-size: 30px;
+    animation: confetti-fall 4s linear forwards;
+    z-index: 9999;
+}
+
+/* header styles */
+header {
+    background-color: #f8f8f8;
+    padding: 15px 0;
+    border-bottom: 5px dashed #ff5e62;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.wobble-header {
+    animation: wobble 10s ease-in-out infinite;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 28px;
+    background-image: linear-gradient(to right, #ff9966, #ff5e62);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+}
+
+.spinning {
+    display: inline-block;
+    transition: transform 0.5s ease;
+}
+
+.spinning:hover {
+    animation: rotate 1s linear infinite;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+.nav-item {
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover {
+    transform: scale(1.2) rotate(5deg);
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #555;
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-weight: bold;
+    z-index: 1;
+}
+
+nav ul li a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+nav ul li a:hover:before {
+    opacity: 1;
+    animation: background-pulse 8s linear infinite;
+}
+
+nav ul li a:hover {
+    color: white;
+    background-color: #ff5e62;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 94, 98, 0.4);
+}
+
+/* hero styles */
+#hero {
+    padding: 80px 0;
+    text-align: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("https://naked-science.ru/wp-content/uploads/2016/09/field_image_flock_of_pigeons_wallpaper_-_1152x864.jpg");
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.pulsing-background {
+    animation: pulse 4s ease-in-out infinite;
+}
+
+.flying-pigeon {
+    position: absolute;
+    font-size: 40px;
+    animation: flyAcross 12s linear infinite;
+}
+
+.delay-1 {
+    animation-delay: 4s;
+}
+
+.delay-2 {
+    animation-delay: 8s;
+}
+
+#hero h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transform: rotate(-2deg);
+}
+
+#hero p {
+    font-size: 22px;
+    margin-bottom: 25px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.rainbow-button {
+    background-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 400% 400%;
+    animation: background-pulse 3s ease infinite;
+    color: white !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.shake-on-hover:hover {
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #444;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: 'Permanent Marker', cursive;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: rotate(-2deg);
+}
+
+.cta-button:hover {
+    background-color: #ff5e62;
+    transform: translateY(-5px) rotate(2deg);
+    box-shadow: 0 8px 20px rgba(255, 94, 98, 0.4);
+}
+
+#hero .cta-button {
+    background-color: #f4f4f4;
+    color: #191919;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+#hero .cta-button:hover {
+    background-color: #ff5e62;
+    color: white;
+}
+
+.pulsing-button {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* about section */
+#about {
+    padding: 80px 0;
+    background-color: #f8f8f8;
+    position: relative;
+    overflow: hidden;
+}
+
+#about h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 36px;
+    color: #444;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.about-text {
+    flex: 1;
+    font-size: 18px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.about-image {
+    flex: 1;
+    transition: all 0.3s ease;
+    border: 5px solid #ff5e62;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.tilt-on-hover:hover {
+    transform: perspective(500px) rotateY(15deg);
+    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    transition: all 0.5s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.1);
+}
+
+/* breeds section */
+#breeds {
+    padding: 80px 0;
+    background-color: #e8e8e8;
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax-section {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+}
+
+.falling-feathers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.feather {
+    position: absolute;
+    font-size: 30px;
+    opacity: 0.7;
+    animation: fall 15s linear infinite;
+}
+
+.feather:nth-child(1) { left: 10%; animation-delay: 0s; }
+.feather:nth-child(2) { left: 30%; animation-delay: 3s; }
+.feather:nth-child(3) { left: 50%; animation-delay: 6s; }
+.feather:nth-child(4) { left: 70%; animation-delay: 1.5s; }
+.feather:nth-child(5) { left: 85%; animation-delay: 4.5s; }
+.feather:nth-child(6) { left: 20%; animation-delay: 7.5s; }
+
+#breeds h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 36px;
+    color: #444;
+}
+
+.breeds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.flip-card {
+    background-color: transparent;
+    height: 350px;
+    perspective: 1000px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.flip-card-front {
+    background-color: #fff;
+}
+
+.flip-card-back {
+    background-color: #ff5e62;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.flip-card-back h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.flip-card-back p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.breed-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.breed-card h3 {
+    padding: 15px 15px 5px;
+    font-size: 24px;
+    color: #444;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.breed-card p {
+    padding: 0 15px 15px;
+    color: #666;
+    font-size: 16px;
+}
+
+/* pricing section */
+#pricing {
+    padding: 80px 0;
+    background-color: #f4f4f4;
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+    position: relative;
+}
+
+#pricing h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 36px;
+    color: #444;
+}
+
+.pricing-table {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.pricing-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.slide-in-left {
+    animation: slide-in-left 1s ease-out forwards;
+}
+
+@keyframes slide-in-left {
+    0% { transform: translateX(-100px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+.slide-in-right {
+    animation: slide-in-right 1s ease-out forwards;
+}
+
+@keyframes slide-in-right {
+    0% { transform: translateX(100px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+.slide-in-top {
+    animation: slide-in-top 1s ease-out forwards;
+}
+
+@keyframes slide-in-top {
+    0% { transform: translateY(-100px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.pricing-card h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #444;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.price {
+    font-size: 48px;
+    margin-bottom: 25px;
+    color: #ff5e62;
+    font-weight: bold;
+}
+
+.wobble-element {
+    animation: wobble 5s ease-in-out infinite;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    right: -30px;
+    background-color: #ff5e62;
+    color: white;
+    padding: 5px 30px;
+    transform: rotate(45deg);
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.rotate-badge {
+    animation: rotate 10s linear infinite;
+}
+
+.pricing-card ul {
+    list-style: none;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.pricing-card ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.pricing-card ul li i {
+    color: #ff5e62;
+    margin-right: 10px;
+}
+
+.pricing-card .cta-button {
+    display: inline-block;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.pricing-card.featured {
+    transform: scale(1.05);
+    border: 3px solid #ff5e62;
+    z-index: 2;
+}
+
+.spotlight {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 70%);
+    pointer-events: none;
+    opacity: 0.5;
+    animation: spotlight-rotate 10s linear infinite;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.1);
+}
+
+/* contact section */
+#contact {
+    padding: 80px 0;
+    background-color: #e0e0e0;
+    background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
+    position: relative;
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 36px;
+    color: #444;
+}
+
+.contact-container {
+    display: flex;
+    gap: 40px;
+    max-width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+}
+
+.contact-info {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.bounce-in {
+    animation: bounce-in 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes bounce-in {
+    0% { transform: scale(0.8); opacity: 0; }
+    60% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.7;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info p i {
+    margin-right: 15px;
+    color: #ff5e62;
+    font-size: 24px;
+}
+
+.glowing-border {
+    border: 2px solid #ff5e62;
+    animation: borderGlow 3s ease-in-out infinite;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.form-group:hover label {
+    color: #ff5e62;
+}
+
+.input-field {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-family: 'Comic Neue', cursive;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.input-field:focus {
+    border-color: #ff5e62;
+    box-shadow: 0 0 10px rgba(255, 94, 98, 0.4);
+    outline: none;
+    background-color: white;
+}
+
+.crazy-select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"6 9 12 15 18 9\"></polyline></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    cursor: pointer;
+}
+
+.crazy-select:hover {
+    background-color: #f9f9f9;
+}
+
+.super-crazy-button {
+    background: linear-gradient(90deg, #ff5e62, #ff9966, #ff5e62);
+    background-size: 200% 100%;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(255, 94, 98, 0.4);
+    animation: background-pulse 3s infinite, shake 5s infinite;
+    transform: rotate(-2deg);
+}
+
+.super-crazy-button:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 15px 30px rgba(255, 94, 98, 0.6);
+}
+
+/* footer section */
+.crazy-footer {
+    background-color: #444;
+    padding: 30px 0;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    border-top: 5px dashed #ff5e62;
+}
+
+.crazy-footer p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.disclaimer {
+    font-size: 12px;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+.pigeon-footer-animation {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+}
+
+.pigeon-silhouette {
+    position: absolute;
+    bottom: 0;
+    width: 50px;
+    height: 30px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%23ffffff" d="M400 224c-9.148 0-17.62 2.697-24.89 7.143C370.9 208.8 351.5 192 328 192c-17.38 0-32.46 9.33-40.89 23.17C282.1 192.9 263.4 176 240 176c-12.73 0-24.06 5.688-32 14.52V160c0-35.35-28.65-64-64-64s-64 28.65-64 64v208c0 18.6 3.22 36.75 9.336 53.72l16.16 44.95c6.412 17.81 23.65 29.34 42.39 29.34h146.1c19.38 0 36.14-13.5 40.28-32.27l40.83-184.4C381.7 264.2 400 249.3 400 228V224C400 224 400 224 400 224z"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    animation: flyAcross 15s linear infinite;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image {
+        order: -1;
+        margin-bottom: 20px;
+    }
+
+    .breeds-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .pricing-table {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-card {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 30px;
+    }
+
+    .pricing-card.featured {
+        transform: none;
+        order: -1;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        max-width: none;
+    }
+
+    #pigeonForm {
+        max-width: 100%;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .glowing-text {
+        font-size: 32px !important;
+    }
+
+    .color-changing-text {
+        font-size: 18px !important;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    header .container {
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+}
