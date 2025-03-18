@@ -11,6 +11,23 @@ body {
     padding: 0 20px;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+/* prevent horizontal scrol */
+body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* making images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 
 /* header styles */
 header {
@@ -147,7 +164,7 @@ nav ul li a:hover {
 
 .breeds-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
 
@@ -198,7 +215,7 @@ nav ul li a:hover {
     background-color: #fff;
     border-radius: 10px;
     padding: 30px;
-    width: 250px;
+    width: 300px;
     text-align: center;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
@@ -289,8 +306,65 @@ nav ul li a:hover {
     resize: vertical;
 }
 
-/* Mobile responsive styles */
+footer {
+    background-color: #f8f8f8;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+}
+
+/* mobile styles */
 @media (max-width: 768px) {
+    header {
+        background-color: #f8f8f8;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        padding: 12px 0;
+    }
+    
+    header .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 15px;
+    }
+    
+    .logo {
+        margin-bottom: 0;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    
+    nav ul li {
+        margin: 5px;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:active,
+    nav ul li a:focus {
+        background-color: transparent !important;
+        color: #555 !important;
+        border-radius: 0 !important;
+        transform: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+    }
+    
+    /* remove default tap highlight */
+    nav ul li a {
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+    }
+
     .about-content {
         flex-direction: column;
     }
@@ -300,10 +374,23 @@ nav ul li a:hover {
         margin-bottom: 20px;
     }
 
-    .breeds-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    #hero {
+        padding: 40px 0;
     }
-
+    
+    #hero h2 {
+        font-size: 26px;
+    }
+    
+    #hero p {
+        font-size: 16px;
+    }
+    
+    .breeds-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
     .pricing-table {
         flex-direction: column;
         align-items: center;
@@ -313,13 +400,14 @@ nav ul li a:hover {
         width: 100%;
         max-width: 300px;
         margin-bottom: 20px;
+        padding: 20px 15px;
     }
 
     .pricing-card.featured {
         transform: none;
         order: -1;
     }
-
+    
     .contact-container {
         flex-direction: column;
         padding: 0 10px;
@@ -343,12 +431,33 @@ nav ul li a:hover {
     .form-group {
         margin-bottom: 15px;
     }
+    
+    /* slightly bigger buttons on mobile */
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
 }
 
-footer {
-    background-color: #f8f8f8;
-    padding: 15px 0;
-    text-align: center;
-    margin-top: 40px;
-    border-top: 1px solid #ddd;
+/* extra small devices */
+@media (max-width: 480px) {
+    header .container {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .logo {
+        margin-bottom: 10px;
+    }
+    
+    nav ul {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    /* single column for breeds seciton */
+    .breeds-grid {
+        grid-template-columns: 1fr;
+    }
 }
