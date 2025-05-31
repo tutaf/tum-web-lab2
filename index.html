@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pigeon Sales</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -32,45 +33,62 @@
     </div>
 </section>
 
-<section id="about">
+<section id="about" class="py-5 bg-light">
     <div class="container">
-        <h2>About Our Pigeons</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>Welcome to Pigeon Sales, where we've been breeding quality pigeons for over 20 years. We handpick the best pigeons from the central park and raise them with care.</p>
-                <p>Each pigeon is hand-selected and guaranteed to be alive upon delivery. We offer a variety of colors and types.</p>
+        <h2 class="text-center mb-5 display-6 text-dark">About Our Pigeons</h2>
+        <!-- using bootstrap's grid here instead of flexbox -->
+        <div class="row align-items-center g-4">
+            <div class="col-lg-6">
+                <p class="mb-3">Welcome to Pigeon Sales, where we've been breeding quality pigeons for over 20 years. We handpick the best pigeons from the central park and raise them with care.</p>
+                <p class="mb-3">Each pigeon is hand-selected and guaranteed to be alive upon delivery. We offer a variety of colors and types.</p>
                 <p>Our facility is located in the countryside where our pigeons enjoy fresh air, baguette crumbs and proper exercise daily.</p>
             </div>
-            <div class="about-image">
-                <img src="https://www.si.com/.image/t_share/MTY4MjU5ODQ3MzYzMzA3NDIx/video_still_8253jpg.jpg" alt="Our pigeon facility">
+            <div class="col-lg-6">
+                <img src="https://www.si.com/.image/t_share/MTY4MjU5ODQ3MzYzMzA3NDIx/video_still_8253jpg.jpg" alt="Our pigeon facility" class="img-fluid rounded">
             </div>
         </div>
     </div>
 </section>
 
-<section id="breeds">
+<section id="breeds" class="py-5" style="background-color: #e8e8e8;">
     <div class="container">
-        <h2>Our Pigeon Breeds</h2>
-        <div class="breeds-grid">
-            <div class="breed-card">
-                <img src="https://avatars.mds.yandex.net/get-mpic/2017233/img_id6683631663168873492.jpeg/orig" alt="Fat boy">
-                <h3>Fat</h3>
-                <p>Defying aerodynamics every day.</p>
+        <h2 class="text-center mb-5 display-6 text-dark">Our Pigeon Breeds</h2>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="breed-card card h-100 shadow-sm">
+                    <img src="https://avatars.mds.yandex.net/get-mpic/2017233/img_id6683631663168873492.jpeg/orig" alt="Fat boy" class="card-img-top">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Fat</h3>
+                        <p class="card-text">Defying aerodynamics every day.</p>
+                    </div>
+                </div>
             </div>
-            <div class="breed-card">
-                <img src="https://kzngo.ru/images/bb35d3848b/93479d51cd.jpg" alt="Fancy">
-                <h3>Fancy</h3>
-                <p>We stole this one from a wedding.</p>
+            <div class="col-md-6 col-lg-3">
+                <div class="breed-card card h-100 shadow-sm">
+                    <img src="https://kzngo.ru/images/bb35d3848b/93479d51cd.jpg" alt="Fancy" class="card-img-top">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Fancy</h3>
+                        <p class="card-text">We stole this one from a wedding.</p>
+                    </div>
+                </div>
             </div>
-            <div class="breed-card">
-                <img src="https://i.pinimg.com/736x/8d/06/a6/8d06a678b66c9b9dec0087a7a4f297ec--motion-photography-wallpaper-desktop.jpg" alt="Suicidal">
-                <h3>Suicidal</h3>
-                <p>He's had enough.</p>
+            <div class="col-md-6 col-lg-3">
+                <div class="breed-card card h-100 shadow-sm">
+                    <img src="https://i.pinimg.com/736x/8d/06/a6/8d06a678b66c9b9dec0087a7a4f297ec--motion-photography-wallpaper-desktop.jpg" alt="Suicidal" class="card-img-top">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Suicidal</h3>
+                        <p class="card-text">He's had enough.</p>
+                    </div>
+                </div>
             </div>
-            <div class="breed-card">
-                <img src="https://i.pinimg.com/originals/b8/d6/10/b8d6106461b3bc5d00dccca548d6a1b3.jpg" alt="Elegant">
-                <h3>Elegant</h3>
-                <p>Built different, but in a charming way.</p>
+            <div class="col-md-6 col-lg-3">
+                <div class="breed-card card h-100 shadow-sm">
+                    <img src="https://i.pinimg.com/originals/b8/d6/10/b8d6106461b3bc5d00dccca548d6a1b3.jpg" alt="Elegant" class="card-img-top">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Elegant</h3>
+                        <p class="card-text">Built different, but in a charming way.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -188,5 +206,6 @@
         });
     });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
