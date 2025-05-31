@@ -166,5 +166,27 @@
         <p>Pigeon Sales - Best Pigeons in Town</p>
     </div>
 </footer>
+
+<div class="mascot">
+    <img src="https://cdn-icons-png.flaticon.com/512/8277/8277636.png" alt="Pigeon Mascot">
+    <div class="mascot-speech">click me for a discount!</div>
+</div>
+
+<script>
+    document.querySelector('.mascot').addEventListener('click', function() {
+        alert('use promocode PIGEON10 for 10% off your first pigeon!\n(yes, we know there\'s no input field for promocodes)');
+    });
+    
+    // hide masco when input fields are focused
+    const formInputs = document.querySelectorAll('input, textarea, select');
+    formInputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            document.querySelector('.mascot').style.display = 'none';
+        });
+        input.addEventListener('blur', function() {
+            document.querySelector('.mascot').style.display = 'block';
+        });
+    });
+</script>
 </body>
 </html>
